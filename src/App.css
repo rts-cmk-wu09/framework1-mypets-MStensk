@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+  margin: 0;
+}
+#root {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+h1{
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+figure{
+  margin: 0;
+}
+
+.FlexContainer{
+  text-align: left;
+} 
+.PetTagContainer{
+  display: flex;
+  padding: 0rem 2rem;
+  padding-top: 2em;
+  padding-bottom: 2rem;
+}
+.PetCardContainer{
+  display: flex;
+  flex-direction: column;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  /* scroll-behavior: smooth; */
+  padding: 0rem 2rem;
+}
+.PetCardContainer::-webkit-scrollbar {
+  display: none;
+}
+p{
+  font-family: 'Lato', sans-serif;
+}
+
