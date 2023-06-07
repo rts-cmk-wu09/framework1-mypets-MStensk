@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 
-
-const PetDesc = () => {
+const StyledP = styled.p`
+max-height: 80px;
+word-wrap: break-word;
+`
+const PetDesc = (props) => {
     return (
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-
+        <div>
+            <StyledP>{props.desc}</StyledP>
+        </div>
     );
 
 };

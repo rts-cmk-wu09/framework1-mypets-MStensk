@@ -15,12 +15,12 @@ font-size: 14px;
 margin-left: 0.1em;
 `
 
-export const PetLocation = () => {
+export const PetLocation = (props) => {
 
     return (
         <StyledDiv>
             <StyledLocation />
-            <StyledP>New York City</StyledP>
+            <StyledP {...props}>{props.location}</StyledP>
         </StyledDiv>
     );
 

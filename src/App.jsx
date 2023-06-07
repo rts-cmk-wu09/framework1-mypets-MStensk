@@ -5,29 +5,14 @@ import Image from './components/Image'
 import { PetTag } from './components/PetTag'
 import Navigation from "./components/Navigation"
 import './App.css'
+import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 
 function App() {
+  const [context, setContext] = useState({});
   return (
     <>
-      <div className='App'>
-        <main>
-          <section className="PetListContainer">
-            <div className="PetTagContainer">
-              <PetTag title="Cats" />
-              <PetTag title="Dogs" />
-              <PetTag title="Birds" />
-            </div>
-            <div className="PetCardContainer">
-              <PetCard />
-              <PetCard />
-              <PetCard />
-            </div>
-          </section>
-          <footer>
-            <Navigation />
-          </footer>
-        </main>
-      </div>
+      <Outlet context={[context, setContext]} />
     </>
   )
 }

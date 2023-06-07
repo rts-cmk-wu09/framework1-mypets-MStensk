@@ -1,4 +1,4 @@
-import coverimage from "../assets/Dog-PNG-image.png";
+import coverimage from "../assets/DOG-PNG-Image.png";
 const Image = () => {
     return <img src={coverimage} alt="blablabla" />;
 };

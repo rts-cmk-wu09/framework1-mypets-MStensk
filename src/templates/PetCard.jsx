@@ -3,6 +3,8 @@ import Heading from "../components/Heading";
 import Image from "../components/Image";
 import PetDesc from "../components/PetDesc";
 import PetLocation from "../components/PetLocation";
+import useAxios from "../UseAxios";
+import { useState } from "react";
 
 const StyledArticle = styled.article`
   height: 130px;
@@ -16,17 +18,29 @@ const StyledArticle = styled.article`
 `;
 
 const PetCard = () => {
+    const [data, error, loading] = useAxios();
     return (
-        <StyledArticle>
-            <figure>
-                <Image />
-            </figure>
-            <div className="FlexContainer">
-                <Heading title="Pet Name" />
-                <PetLocation />
-                <PetDesc />
-            </div>
-        </StyledArticle>
+        <>
+            {error && <p>Der opstod en fejl...</p>}
+            {loading && <p>loading...</p>}
+            {data && (
+                <>
+                    {data.animals.map((animal) => (
+                        <div key={animal.id}>
+                            <StyledArticle>
+                                <figure>
+                                    <Image />
+                                </figure>
+                                <div className="FlexContainer">
+                                    <Heading title={animal.name} />
+                                    <PetDesc desc={animal.description} />
+                                </div>
+                            </StyledArticle>
+                        </div>
+                    ))}
+                </>
+            )}
+        </>
     );
 };
 
