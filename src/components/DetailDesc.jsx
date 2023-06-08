@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 
 const StyledP = styled.p`
-max-height: 60px;
 word-wrap: break-word;
-height: 100%;
+text-align: left;
 max-width: 215px;
+margin-left: 0.8em;
+font-size: 20px;
 `
-const PetDesc = (props) => {
+const DetailDesc = (props) => {
     return (
         <div>
             <StyledP>{props.desc}{props.align}</StyledP>
@@ -16,4 +17,4 @@ const PetDesc = (props) => {
 
 };
 
-export default PetDesc;
+export default DetailDesc;

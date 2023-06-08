@@ -7,6 +7,7 @@ function useAxios() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
     const [context, setContext] = useOutletContext();
+    const [id, setId] = useState(null)
 
     useEffect(() => {
         const getResponse = async () => {
@@ -26,17 +27,20 @@ function useAxios() {
                         expire: data.expires_in + Math.floor(Date.now() / 1000),
                     });
                 } else {
+
                     const NextResponse = await axios.get(
-                        "https://api.petfinder.com/v2/animals",
+                        `https://api.petfinder.com/v2/animals/`,
                         {
                             headers: {
                                 Authorization: "Bearer " + context.token,
                             },
                         }
                     );
+                    const animalId = NextResponse.data.animals.id;
                     const nextData = NextResponse.data;
                     setData(nextData);
                     setLoading(false);
+                    setId(animalId);
                 }
 
             } catch(err) {

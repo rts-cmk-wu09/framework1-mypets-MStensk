@@ -5,7 +5,6 @@ import { PetTag } from '../components/PetTag'
 import Navigation from "../components/Navigation"
 import useAxios from "../UseAxios";
 const ListView = (props) => {
-    const [data, error, loading] = useAxios();
     return (
         <>
             <main>
@@ -16,8 +15,6 @@ const ListView = (props) => {
                         <PetTag title="Birds" />
                     </div>
                     <div className="PetCardContainer">
-                        <PetCard />
-                        <PetCard />
                         <PetCard />
                     </div>
                 </section>

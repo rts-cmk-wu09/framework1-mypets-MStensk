@@ -5,6 +5,7 @@ import PetDesc from "../components/PetDesc";
 import PetLocation from "../components/PetLocation";
 import useAxios from "../UseAxios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const StyledArticle = styled.article`
   height: 130px;
@@ -26,7 +27,7 @@ const PetCard = () => {
             {data && (
                 <>
                     {data.animals.map((animal) => (
-                        <div key={animal.id}>
+                        <Link to={`details/${animal.id}`} key={animal.id}>
                             <StyledArticle>
                                 <figure>
                                     <Image />
@@ -36,7 +37,7 @@ const PetCard = () => {
                                     <PetDesc desc={animal.description} />
                                 </div>
                             </StyledArticle>
-                        </div>
+                        </Link>
                     ))}
                 </>
             )}
