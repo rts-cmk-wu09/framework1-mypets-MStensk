@@ -6,6 +6,7 @@ import PetLocation from "../components/PetLocation";
 import useAxios from "../UseAxios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import dogLogo from "../assets/DOG-PNG-Image.png"
 
 const StyledArticle = styled.article`
   height: 130px;
@@ -30,11 +31,16 @@ const PetCard = () => {
                         <Link to={`details/${animal.id}`} key={animal.id}>
                             <StyledArticle>
                                 <figure>
-                                    <Image />
+                                    <Image
+                                        width="120"
+                                        height="132"
+                                        src={`https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/${animal.id}/1/?bust=1686812846&width=450`}
+                                        alt="Cover Image"
+                                    />
                                 </figure>
                                 <div className="FlexContainer">
                                     <Heading title={animal.name} />
-                                    <PetDesc desc={animal.description} />
+                                    <PetDesc desc={`${animal.description}`} />
                                 </div>
                             </StyledArticle>
                         </Link>

@@ -20,6 +20,7 @@ figure{
 
 .FlexContainer{
   text-align: left;
+  margin-left: 1em;
 } 
 .PetTagContainer{
   display: flex;

@@ -41,6 +41,7 @@ function useAxios() {
                     setData(nextData);
                     setLoading(false);
                     setId(animalId);
+                    console.log(nextData)
                 }
 
             } catch(err) {

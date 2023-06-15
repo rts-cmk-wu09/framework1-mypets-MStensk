@@ -1,14 +1,14 @@
 import coverimage from "../assets/DOG-PNG-Image.png";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledImg = styled.img`
   ${(props) =>
-        (props.shadow &&
-            css`
+    (props.shadow &&
+      css`
         box-shadow: 0px 5px 10px rgb(0 0 0 / 0.35);
       `) ||
-        (props.objectFit &&
-            css`
+    (props.objectFit &&
+      css`
         object-fit: cover;
       `)}
 
@@ -18,6 +18,9 @@ const StyledImg = styled.img`
 `;
 
 const Image = (props) => {
-    return <StyledImg src={coverimage} alt="blablabla" {...props}></StyledImg>;
-};
+  return <StyledImg {...props} onError={event => {
+    event.target.src = coverimage
+    event.onError = null
+  }} />;
+}
 export default Image;

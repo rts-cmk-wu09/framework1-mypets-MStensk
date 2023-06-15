@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 import DetailHeading from "../components/DetailHeading";
 import DetailDesc from "../components/DetailDesc";
+import dogLogo from "../assets/landingPage_Dog.png"
+
 
 const StyledHeader = styled.header`
   background-position: 0 20%;
@@ -55,7 +57,12 @@ const DetailView = () => {
             {animal && (
                 <StyledMain>
                     <StyledHeader>
-                        <Image width="200" height="200" />
+                        <Image
+                            width="220"
+                            height="220"
+                            src={`https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/${animal.id}/1/?bust=1686812846&width=450`}
+                            alt="Cover Image"
+                        />
                     </StyledHeader>
                     <StyledDiv>
                         <DetailHeading title={animal.name} />
