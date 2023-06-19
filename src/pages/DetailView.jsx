@@ -61,7 +61,7 @@ const DetailView = () => {
                             width="220"
                             height="220"
                             src={`https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/${animal.id}/1/?bust=1686812846&width=450`}
-                            alt="Cover Image"
+                            alt="Pet_Image"
                         />
                     </StyledHeader>
                     <StyledDiv>

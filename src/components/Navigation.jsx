@@ -3,6 +3,7 @@ import { BiHomeAlt } from "react-icons/bi"
 import { BsChat, BsPerson } from "react-icons/bs"
 import { AiOutlineHeart } from "react-icons/ai"
 import { Link } from "react-router-dom";
+
 const StyledHome = styled(BiHomeAlt)`
 color: black;
 border: 1px solid gray;
@@ -26,11 +27,10 @@ color: black;
 border: 1px solid gray;
 border-radius: 25px;
 padding: 0.4em;
-
 `
 const StyledNav = styled.nav`
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   width: 100vw;
   display: flex;
   justify-content: space-around;

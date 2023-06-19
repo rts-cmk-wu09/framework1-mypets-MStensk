@@ -24,8 +24,8 @@ figure{
 } 
 .PetTagContainer{
   display: flex;
-  padding: 0rem 2rem;
-  padding-top: 2em;
+  padding: 0rem 0rem 0rem 2rem;
+  padding-top: 1em;
   padding-bottom: 2rem;
 }
 .PetCardContainer{

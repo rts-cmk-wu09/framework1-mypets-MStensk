@@ -1,18 +1,18 @@
 import styled from "styled-components";
-
+import { PetTag } from "./PetTag";
+const placeholder = 'asdasdasd'
 
 const StyledP = styled.p`
 max-height: 60px;
 word-wrap: break-word;
 height: 100%;
-max-width: 200px;
+max-width: 160px;
 `
 const PetDesc = (props) => {
-    return (
-        <div>
-            <StyledP>{props.desc}</StyledP>
-        </div>
-    );
+    return <StyledP {...props} onError={event => {
+        event.target.style.display = 'none';
+        event.target.innerText = placeholder;
+    }}>{props.desc}</StyledP>;
 
 };
 
